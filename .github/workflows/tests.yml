@@ -16,8 +16,8 @@ jobs:
       run: yarn install
     - name: ESLint
       run: yarn lint:js
-    - name: Types
-      run: yarn tsc --noEmit
+    # - name: Types
+    #   run: yarn tsc --noEmit
 
   tests_floating:
     name: Floating
@@ -38,8 +38,7 @@ jobs:
     strategy:
       matrix:
         scenario:
-        - "ember-lts-3.4"
-        - "ember-lts-3.8"
+        - "ember-lts-3.10"
         - "ember-lts-3.12"
         - "ember-release"
         - "ember-beta"
@@ -54,24 +53,3 @@ jobs:
     - name: Test with ${{ matrix.scenario }}
       run: yarn test:try-one ${{ matrix.scenario }}
 
-  tests_integration:
-    name: Integration
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ember_app:
-        - "classic/3.4"
-        - "classic/3.14"
-        - "octane/3.14"
-    steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-    - name: Test
-      env:
-        EMBER_APP: ${{ matrix.ember_app }}
-      run: |
-        cd tests/-ember-apps/$EMBER_APP/
-        yarn
-        yarn test
