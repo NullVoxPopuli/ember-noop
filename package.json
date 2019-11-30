@@ -3,7 +3,10 @@
   "version": "0.0.2",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "utility",
+    "modifiers",
+    "helpers"
   ],
   "repository": "https://github.com/NullVoxPopuli/ember-noop",
   "license": "MIT",
