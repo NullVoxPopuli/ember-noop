@@ -8,7 +8,7 @@ _Now you can!_
 
 *Using the `noop` helper*
 ```hbs
-<button {{on 'click' (if this.condition this.myAction noop)}}>
+<button {{on 'click' (if this.condition this.myAction (noop))}}>
   if condition is falsey, clicking won't do anything
 </button>
 ```

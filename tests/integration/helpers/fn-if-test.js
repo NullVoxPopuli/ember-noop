@@ -1,17 +1,35 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, click } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Helper | fn-if', function(hooks) {
   setupRenderingTest(hooks);
 
   // Replace this with your real tests.
-  test('it renders', async function(assert) {
-    this.set('inputValue', '1234');
+  test('works', async function(assert) {
+    this.setProperties({
+      counter: 0,
+      action: () => this.counter++,
+      condition: false,
+    });
 
-    await render(hbs`{{fn-if inputValue}}`);
+    await render(hbs`
+      <button {{on 'click' (fn-if this.condition this.action)}}>
+        Click me
+      </button>
+    `);
 
-    assert.equal(this.element.textContent.trim(), '1234');
+    await click('button');
+
+    assert.equal(this.counter, 0);
+
+    this.setProperties({
+      condition: true,
+    });
+
+    await click('button');
+
+    assert.equal(this.counter, 1);
   });
 });
