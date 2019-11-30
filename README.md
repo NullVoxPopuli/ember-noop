@@ -13,7 +13,7 @@ _Now you can!_
 </button>
 ```
 
-*Using the `if-fn` helper*
+*Using the `fn-if` helper*
 ```hbs
 <button {{on 'click' (fn-if this.condition this.myAction)}}>
   This provides a shorthand for the above
