@@ -26,7 +26,9 @@ _Note: It's recommended to use `disabled` with unclickable buttons._
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.10 or above
+* Ember.js v3.11+
+* Ember.js v2.18+ with the [on modifier polyfill](https://github.com/buschtoens/ember-on-modifier)
+* Any Ember version, because these are just helpers, and helper have been around for a while.
 
 
 Installation

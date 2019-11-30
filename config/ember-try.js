@@ -6,10 +6,10 @@ module.exports = async function() {
   return {
     scenarios: [
       {
-        name: 'ember-lts-3.10',
+        name: 'ember-lts-3.11',
         npm: {
           devDependencies: {
-            'ember-source': '~3.10.0'
+            'ember-source': '~3.11.0'
           }
         }
       },
