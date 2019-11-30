@@ -1,15 +1,32 @@
 ember-noop
 ==============================================================================
 
-[Short description of the addon.]
+Ever wanted to have an optional action? maybe with the `on` modifier?
 
+_Now you can!_
+
+
+*Using the `noop` helper*
+```hbs
+<button {{on 'click' (if this.condition this.myAction noop)}}>
+  if condition is falsey, clicking won't do anything
+</button>
+```
+
+*Using the `if-fn` helper*
+```hbs
+<button {{on 'click' (fn-if this.condition this.myAction)}}>
+  This provides a shorthand for the above
+</button>
+```
+
+
+_Note: It's recommended to use `disabled` with unclickable buttons._
 
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.4 or above
-* Ember CLI v2.13 or above
-* Node.js v8 or above
+* Ember.js v3.10 or above
 
 
 Installation
@@ -18,13 +35,6 @@ Installation
 ```
 ember install ember-noop
 ```
-
-
-Usage
-------------------------------------------------------------------------------
-
-[Longer description of how to use the addon in apps.]
-
 
 Contributing
 ------------------------------------------------------------------------------
