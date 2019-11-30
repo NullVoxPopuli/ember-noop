@@ -3,11 +3,14 @@
   "version": "0.0.2",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "utility",
+    "modifiers",
+    "helpers"
   ],
-  "repository": "",
+  "repository": "https://github.com/NullVoxPopuli/ember-noop",
   "license": "MIT",
-  "author": "",
+  "author": "NullVoxPopuli",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -18,6 +21,7 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test",
+    "test:try-one": "ember try:one",
     "test:all": "ember try:each"
   },
   "dependencies": {
