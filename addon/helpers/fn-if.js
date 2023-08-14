@@ -1,8 +1,8 @@
 import { helper } from '@ember/component/helper';
 
-export function fnIf([condition, invokeable]/*, hash*/) {
+export function fnIf([condition, invokeable, ...args]/*, hash*/) {
   if (condition) {
-    return invokeable;
+    return () => invokeable(...args);
   }
 
   return () => {};
