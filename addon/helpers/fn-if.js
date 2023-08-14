@@ -2,7 +2,7 @@ import { helper } from '@ember/component/helper';
 
 export function fnIf([condition, invokeable, ...args]/*, hash*/) {
   if (condition) {
-    return () => invokeable(...args);
+    return (...extra) => invokeable(...args, ...extra);
   }
 
   return () => {};
